@@ -80,7 +80,7 @@ window.addEventListener('load', () => {
 // ──────────────────────────────────────────────────────────────
 // Nejčistší futuristický loading screen – jen logo + glass core
 // ──────────────────────────────────────────────────────────────
-
+/*
 const loading = document.createElement('div');
 loading.id = 'elite-loading';
 loading.style.cssText = `
@@ -189,3 +189,13 @@ window.addEventListener('load', () => {
     setTimeout(() => loading.remove(), 1800);
   }, 6200);  // celkem ~8 sekund
 });
+const track = document.querySelector(".partners-track");
+
+track.addEventListener("mouseenter", () => {
+  track.style.animationPlayState = "paused";
+});
+
+track.addEventListener("mouseleave", () => {
+  track.style.animationPlayState = "running";
+});
+*/

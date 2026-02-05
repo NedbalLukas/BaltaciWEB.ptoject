@@ -4,7 +4,6 @@ const closeMenu = document.getElementById('closeMenu');
 const menuOverlay = document.getElementById('menuOverlay');
 const header = document.getElementById('header');
 
-// Mobilní menu – toggle + stagger + smooth scale/fade
 function toggleMenu(open = null) {
   const isActive = mobileMenu.classList.contains('active');
 
@@ -39,14 +38,12 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => toggleMenu(false));
 });
 
-// Header – blur + lift při scrollu
 window.addEventListener('scroll', () => {
   if (header) {
     header.classList.toggle('scrolled', window.scrollY > 80);
   }
 });
 
-// Scroll reveal – Intersection Observer
 const observerOptions = {
   root: null,
   rootMargin: '0px 0px -18% 0px',
@@ -69,7 +66,6 @@ document.querySelectorAll('.features .card').forEach((card, i) => {
   card.style.transitionDelay = `${0.14 + i * 0.16}s`;
 });
 
-// Hero – elegantní nástup při načtení stránky
 window.addEventListener('load', () => {
   const hero = document.querySelector('.hero-content');
   if (hero) {
@@ -77,10 +73,6 @@ window.addEventListener('load', () => {
   }
 });
 
-// ──────────────────────────────────────────────────────────────
-// Nejčistší futuristický loading screen – jen logo + glass core
-// ──────────────────────────────────────────────────────────────
-/*
 const loading = document.createElement('div');
 loading.id = 'elite-loading';
 loading.style.cssText = `
@@ -198,4 +190,3 @@ track.addEventListener("mouseenter", () => {
 track.addEventListener("mouseleave", () => {
   track.style.animationPlayState = "running";
 });
-*/

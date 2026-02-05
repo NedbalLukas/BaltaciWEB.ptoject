@@ -13,30 +13,36 @@
 </head>
 <body>
 
-  <header id="header" class="animate-on-scroll">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="IMG/logo.png" alt="ss">
-
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Domov</a></li>
-          <li><a href="#about">O škole</a></li>
-          <li><a href="#fields">Obory</a></li>
-          <li><a href="#galery">Galerie</a></li>          
-          <li><a href="#contact">Kontakty</a></li>
-
-        </ul>
-      </nav>
-
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<header id="header" class="animate-on-scroll">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="IMG/logo.png" alt="ss">
     </div>
-  </header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Domov</a></li>
+        <li><a href="#about">O škole</a></li>
+        <li class="dropdown">
+          <a href="#fields">Obory</a>
+          <ul class="dropdown-menu">
+            <li><a href="#lyceum">Lyceum 2.0</a></li>
+            <li><a href="#it">Informační technologie</a></li>
+            <li><a href="#kuchar">Kuchař číšník</a></li>
+          </ul>
+        </li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Kontakty</a></li>
+      </ul>
+    </nav>
+
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="overlay" id="menuOverlay"></div>
@@ -46,14 +52,22 @@
       <span></span>
     </div>
     <ul>
-          <li><a href="#hero">Domov</a></li>
-          <li><a href="#about">O škole</a></li>
-          <li><a href="#fields">Obory</a></li>
-          <li><a href="#galery">Galerie</a></li>          
-          <li><a href="#contact">Kontakty</a></li>
-          </ul>
+      <li><a href="#hero">Domov</a></li>
+      <li><a href="#about">O škole</a></li>
+      <li class="mobile-dropdown">
+        <a href="#fields" class="dropdown-toggle">Obory</a>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="#lyceum">Lyceum 2.0</a></li>
+          <li><a href="#it">Informační technologie</a></li>
+          <li><a href="#kuchar">Kuchař číšník</a></li>
+        </ul>
+      </li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#contact">Kontakty</a></li>
+    </ul>
   </div>
 </div>
+
 
   <main>
     <section id="hero" class="animate-on-scroll">
@@ -69,7 +83,7 @@
   <div class="about-visual">
     <img src="IMG/Baltaci.png" alt="Střední škola Baltaci">
     <div class="about-visual-overlay">
-      <h2>O škole</h2>
+      <h2>O  škole</h2>
     </div>
   </div>
 
@@ -84,6 +98,7 @@
         školu hotelovou s.r.o. a jejím zřizovatelem je společnost Baltaci 
         a.s., která působí v oblasti gastronomie, hoteliérství a nemovitostí 
         více než 27 let.
+        <br>    <a href="about.html" class="btn btn-glass hero-btn">Více informací</a>
     </div>
 
     <div class="about-features-new">
@@ -122,6 +137,22 @@
     </div>
     </div>
   </div>
+
+  <section id="gallery" class="section animate-on-scroll">
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="IMG/foto1.jpg" alt="Foto 1"></div>
+    <div class="gallery-item"><img src="IMG/foto2.jpg" alt="Foto 2"></div>
+    <div class="gallery-item"><img src="IMG/foto3.jpg" alt="Foto 3"></div>
+    <div class="gallery-item"><img src="IMG/foto4.jpg" alt="Foto 4"></div>
+    <div class="gallery-item"><img src="IMG/foto5.jpg" alt="Foto 5"></div>
+    <div class="gallery-item"><img src="IMG/foto6.jpg" alt="Foto 6"></div>
+        <br>    
+        
+        <a href="galerie.html" class="btn btn-glass hero-btn" >Galerie</a>
+
+  </div>
+</section>
+
 <footer class="footer animate-on-scroll">
   <div class="footer-container glass">
     
@@ -137,7 +168,7 @@
           <li><a href="#hero">Domov</a></li>
           <li><a href="#about">O škole</a></li>
           <li><a href="#fields">Obory</a></li>
-          <li><a href="#galery">Galerie</a></li>          
+          <li><a href="#gallery">Galerie</a></li>          
           <li><a href="#contact">Kontakty</a></li>
         </ul>
       </div>

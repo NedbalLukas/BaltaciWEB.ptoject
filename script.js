@@ -73,78 +73,6 @@ window.addEventListener('load', () => {
   }
 });
 
-const loading = document.createElement('div');
-loading.id = 'elite-loading';
-loading.style.cssText = `
-  position: fixed; inset: 0; z-index: 99999;
-  background: #000;
-  display: flex; justify-content: center; align-items: center;
-  opacity: 1; transition: opacity 1.5s cubic-bezier(0.19,1,0.22,1);
-  overflow: hidden;
-`;
-
-const central = document.createElement('div');
-central.style.cssText = `
-  position: relative; width: 400px; height: 400px;
-  display: flex; justify-content: center; align-items: center;
-  perspective: 1600px;
-`;
-
-const ringOuter = document.createElement('div');
-ringOuter.style.cssText = `
-  position: absolute; inset: 0;
-  border: 1px solid rgba(200,200,255,0.08);
-  border-radius: 50%;
-  animation: ringSlow 36s linear infinite;
-  transform-style: preserve-3d;
-`;
-
-const ringInner = ringOuter.cloneNode();
-ringInner.style.cssText += `
-  border-color: rgba(160,160,255,0.06);
-  animation-duration: 48s;
-  animation-direction: reverse;
-  transform: scale(0.72);
-`;
-
-const core = document.createElement('div');
-core.style.cssText = `
-  width: 240px; height: 240px;
-  background: linear-gradient(135deg, rgba(200,200,255,0.06), rgba(140,140,220,0.04));
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(200,200,255,0.18);
-  border-radius: 50%;
-  box-shadow: 
-    0 0 120px rgba(160,160,255,0.28),
-    inset 0 0 70px rgba(255,255,255,0.05);
-  animation: coreBreathe 8.4s ease-in-out infinite;
-`;
-
-const logo = document.createElement('div');
-logo.textContent = 'Baltaci';
-logo.style.cssText = `
-  position: absolute;
-  font-size: 5.2rem; font-weight: 900; letter-spacing: -4px;
-  color: transparent;
-  background: linear-gradient(90deg, #f5f5f7 10%, #d8d8ff 50%, #f5f5f7 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 400% 100%;
-  animation: subtleGradient 18s ease-in-out infinite;
-  opacity: 0; transform: translateY(80px) scale(0.88);
-  transition: all 2.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  text-shadow: 0 0 80px rgba(200,200,255,0.12);
-`;
-
-central.appendChild(ringOuter);
-central.appendChild(ringInner);
-central.appendChild(core);
-central.appendChild(logo);
-loading.appendChild(central);
-document.body.appendChild(loading);
-
-// ─── Keyframes ────────────────────────────────────────────────
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
   @keyframes ringSlow {
@@ -162,20 +90,16 @@ styleSheet.textContent = `
 `;
 document.head.appendChild(styleSheet);
 
-// ─── Loading sekvence – delší a dramatická ───────────────────
 window.addEventListener('load', () => {
-  // 1. logo pomalý nástup
   setTimeout(() => {
     logo.style.opacity = '1';
     logo.style.transform = 'translateY(0) scale(1)';
   }, 900);
 
-  // 2. jemné zesílení glow
   setTimeout(() => {
     logo.style.textShadow = '0 0 120px rgba(200,200,255,0.22)';
   }, 2200);
 
-  // 3. dlouhý fade out
   setTimeout(() => {
     loading.style.opacity = '0';
     setTimeout(() => loading.remove(), 1800);
